@@ -237,27 +237,64 @@ def app():
     if st.button("Download Report"):
         pdf = FPDF()
         pdf.add_page()
+        # Set title font (bold, larger size)
+        pdf.set_font("Arial", style='B', size=16)
+
+# Get the width of the title and calculate the center position
+        title = "DT implementation Report"
+        title_width = pdf.get_string_width(title)
+        
+        horizontal_position = (210 - title_width) / 2 + 8  # 210 is the page width of A4, adjust with your desired position
+
+# Set the X position explicitly and add the title
+        pdf.set_x(horizontal_position)
+        pdf.cell(title_width, 10, title, ln=True, align='C')
+# Add space after the title
+        pdf.ln(10)
+
+
+
         pdf.set_font("Arial", size=10)
         
-        # Add Project Details
+        # Add Project Detail
         if 'project_details' in st.session_state:
             project_details = st.session_state.project_details
+            pdf.set_font("Arial", style='B', size=10)
             pdf.cell(200, 10, txt="Project Details", ln=True, align='L')
             pdf.cell(200, 10, txt=f"Name of User: {project_details['name_of_user']}", ln=True, align='L')
             pdf.cell(200, 10, txt=f"Name of Project: {project_details['name_of_project']}", ln=True, align='L')
             pdf.cell(200, 10, txt=f"Assessment Date: {project_details['assessment_date']}", ln=True, align='L')
             pdf.cell(200, 10, txt=f"Type of Project: {project_details['type_of_project']}", ln=True, align='L')
-
-        pdf.cell(200, 10, txt="Scores and Recommendations", ln=True, align='L')
+            
+        if 'scores' in st.session_state:
+            scores = st.session_state.scores
+            total_score = sum(scores.values())
+            
+            pdf.cell(200, 10, txt=f"Total Score: {total_score}", ln=True, align='L')
+            
+        if total_score < 40:
+                suitability = "Low"
+        elif 40 <= total_score < 60:
+                suitability = "Medium"
+        else:
+                suitability = "High"
+            
+            # Add Suitability to PDF
+        pdf.cell(200, 10, txt=f"Suitability: {suitability}", ln=True, align='L')
+        pdf.ln(5)  # Adding space before the next section
+        pdf.set_font("Arial", style='B', size=10)
+        pdf.cell(200, 10, txt="Recommendations:", ln=True, align='L')
         for factor, score in st.session_state.scores.items():
             if score <= 3:
+                pdf.set_font("Arial", style='B', size=10)
                 pdf.cell(200, 8, txt=f"{factor}:", ln=True, align='L')
-                pdf.multi_cell(200, 8, txt=f"{recommendations[factor][score]}", align='L')  # Use multi_cell for text wrapping
+                pdf.set_font("Arial", style='', size=10)
+                pdf.multi_cell(200, 8, txt=f"{recommendations[factor][score]}", align='L') 
 
         pdf_file = "decision_factors_report.pdf"
         pdf.output(pdf_file)
      
-        # Provide the download link
+        
         st.download_button(label="Download ", data=open(pdf_file, "rb").read(), file_name=pdf_file)         
 
     
