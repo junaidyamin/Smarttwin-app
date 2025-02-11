@@ -222,10 +222,12 @@ def app():
         st.write(f"Assessment Date: {st.session_state.project_details['assessment_date']}")
         st.write(f"Type of Project: {st.session_state.project_details['type_of_project']}")
         st.write(f"Total Score: {total_score}")
-        if total_score < 40:
+        if total_score < 50:
             st.write("Suitability: Low")
-        elif 40 <= total_score < 60:
-            st.write("Suitability: Medium")
+        elif 50 <= total_score < 60:
+            st.write("Suitability: Average")
+        elif 61 <= total_score < 80:
+            st.write("Suitability: Medium")    
         else:
             st.write("Suitability: High")
         st.write("Recommendations:")
@@ -272,12 +274,14 @@ def app():
             
             pdf.cell(200, 10, txt=f"Total Score: {total_score}", ln=True, align='L')
             
-        if total_score < 40:
-                suitability = "Low"
-        elif 40 <= total_score < 60:
-                suitability = "Medium"
+        if total_score < 50:
+            st.write("Suitability: Low")
+        elif 50 <= total_score < 60:
+            st.write("Suitability: Average")
+        elif 61 <= total_score < 80:
+            st.write("Suitability: Medium")    
         else:
-                suitability = "High"
+            st.write("Suitability: High")
             
             # Add Suitability to PDF
         pdf.cell(200, 10, txt=f"Suitability: {suitability}", ln=True, align='L')
