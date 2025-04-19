@@ -26,7 +26,7 @@ class MultiApp:
 
         with st.sidebar:
             app = option_menu(
-                menu_title="Smarttwin System",
+                menu_title="Twin Decisionmaker",
                 options=["Home", "Project Parameters", "Decision Factors Scoring"],
                 default_index=0 if st.session_state.page == 'Home' else 1 if st.session_state.page == 'Project Parameters' else 2 if st.session_state.page == 'Decision Factors Scoring' else 0,
             )
