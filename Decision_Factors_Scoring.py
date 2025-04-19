@@ -65,8 +65,8 @@ def app():
             3: "DT embracement might be beneficial in ensuring compliances."
         },
         "Strict Maintenance Requirements": {
-            1: "Ensure to focus on basic maintenance practices and traditional methods to ensure system reliability and performance",
-            2: "Ensure to focus on basic maintenance practices and traditional methods to ensure system reliability and performance",
+            1: "Ensure to focus on basic maintenance practices and traditional methods to ensure project's reliability and performance",
+            2: "Ensure to focus on basic maintenance practices and traditional methods to ensure project's reliability and performance",
             3: "Assess how the digital twin can help in planning and executing maintenance tasks more effectively"
         },
         "Safety Requirements": {
@@ -75,14 +75,14 @@ def app():
             3: "Assess how the DT can help in planning and executing safety measures more effectively"
         },
         "Data Privacy and Security Requirements": {
-            1: "Focus on basic data protection practices and ensure compliance with minimal security standards using traditional methods",
-            2: "Focus on basic data protection practices and ensure compliance with minimal security standards using traditional methods",
-            3: "Implement a DT to enhance visibility and control over data privacy and security practices, ensuring that they meet moderate standards"
+            1: "Prioritize fundamental data protection measures such as password policies and access control without investing heavily in digital solutions",
+            2: "Prioritize fundamental data protection measures such as password policies and access control without investing heavily in digital solutions",
+            3: "Leverage DT capabilities to establish end-to-end data governance, real-time threat monitoring, and compliance with cybersecurity regulations"
         },
         "Feasibility of Generating Federated Model of Project": {
             1: "Focus on traditional project management and coordination methods, as the effort and resources required to create a federated model may not be justified given the low feasibility",
             2: "Focus on traditional project management and coordination methods, as the effort and resources required to create a federated model may not be justified given the low feasibility",
-            3: "Use the DT for key aspects of the project where the federated model can add significant value"
+            3: "Use the DT for key aspects of the project where the model can add significant value"
         },
         "Remote Location": {
             1: "Invest resources on the on-site visit and simpler remote management tools to manage the project effectively ",
@@ -90,8 +90,8 @@ def app():
             3: "Use the DT to provide better oversight and control, reducing the need for frequent on-site visits and improving efficiency"
         },
         "Harsh Weather Conditions": {
-            1: "Commit to use simpler tools can help in planning and mitigating occasional weather disruptions",
-            2: "Commit to use simpler tools can help in planning and mitigating occasional weather disruptions",
+            1: "Commitment to use simpler tools can help in planning and mitigating occasional weather disruptions",
+            2: "Commitment to use simpler tools can help in planning and mitigating occasional weather disruptions",
             3: "Seek advice to use the DT to improve response times and decision-making during adverse weather conditions"
         },
         "Unstable Soil and Ground Conditions": {
@@ -170,8 +170,8 @@ def app():
             3: "Look for advanced features and capabilities that can drive innovation and significantly enhance project outcomes."
         },
         "Greenfield vs. Brownfield": {
-            1: "Focus on basic project management tools and traditional methods suited for either Greenfield (new construction) or Brownfield (modifying existing structures) environments.",
-            2: "Focus on basic project management tools and traditional methods suited for either Greenfield (new construction) or Brownfield (modifying existing structures) environments.",
+            1: "Focus on basic project management tools and traditional methods suited for either Greenfield or Brownfield environments.",
+            2: "Focus on basic project management tools and traditional methods suited for either Greenfield or Brownfield environments.",
             3: "For Greenfield projects, use digital twins to enhance design accuracy, streamline construction processes, and simulate different scenarios. For Brownfield projects, leverage digital twins for detailed analysis of existing conditions, clash detection, and efficient integration of new elements"
         },
         "Size of project": {
